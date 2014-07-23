@@ -25,19 +25,18 @@ export HOME SINCEDB_DIR
 
 case $1 in
   deps) install_deps ;;
-  env) env "$@" ;;
   -*)
     if [ -z "$VENDORED_JRUBY" ] ; then
       exec "${RUBYCMD}" "${basedir}/lib/logstash/runner.rb" "agent" "$@"
     else
-      exec "${JAVACMD}" $JAVA_OPTS "-jar" "$JRUBY_JAR" "${basedir}/lib/logstash/runner.rb" "agent" "$@"
+      exec "$JRUBY_BIN" $(jruby_opts) "${basedir}/lib/logstash/runner.rb" "agent" "$@"
     fi
     ;;
   *)
     if [ -z "$VENDORED_JRUBY" ] ; then
       exec "${RUBYCMD}" "${basedir}/lib/logstash/runner.rb" "$@"
     else
-      exec "${JAVACMD}" $JAVA_OPTS "-jar" "$JRUBY_JAR" "${basedir}/lib/logstash/runner.rb" "$@"
+      exec "$JRUBY_BIN" $(jruby_opts) "${basedir}/lib/logstash/runner.rb" "$@"
     fi
     ;;
 esac
