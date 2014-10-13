@@ -62,7 +62,6 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "twitter", "5.0.0.rc.1"            #(MIT license)
   gem.add_runtime_dependency "edn"                              #(MIT license)
   gem.add_runtime_dependency "elasticsearch"                    #(Apache 2.0 license)
-  gem.add_runtime_dependency "log-courier"
 
   # Plugin manager dependencies
 
