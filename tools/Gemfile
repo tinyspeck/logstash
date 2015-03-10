@@ -3,7 +3,7 @@ gemspec :path => File.expand_path(File.join(File.dirname(__FILE__), "..")), :nam
 
 # in development if a local, unpublished gems is required, you must add it first in the gemspec without the :path option
 # and also add it here with the :path option.
-gem "log-courier", :git => "https://github.com/tinyspeck/log-courier.git", :branch => "stable"
+gem "log-courier", :git => "https://github.com/driskell/log-courier.git", :branch => "stable"
 
 gem "aws-sdk", '2.0.28'
 gem "sourcemap"
